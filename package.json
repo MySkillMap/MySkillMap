@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "express": "^4.21.2",
+    "react": "^19.0.0",
+    "vite": "^6.2.1"
+  }
+}
