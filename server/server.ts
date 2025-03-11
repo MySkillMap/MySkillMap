@@ -22,7 +22,7 @@ import dbRouter from './routes/dbRouter.ts'
 app.use('/db', dbRouter);
 
 // Serve all static files in our public folder
-app.use(express.static('../public/*'));
+// app.use(express.static('../public/*'));
 
 
 // Global Error Handler
