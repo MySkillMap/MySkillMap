@@ -4,5 +4,5 @@ WORKDIR /app
 COPY server/package*.json ./
 RUN npm install
 COPY server/. .
-EXPOSE 5000
+EXPOSE 8080
 CMD ["npm", "start"]
