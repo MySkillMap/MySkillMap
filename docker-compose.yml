@@ -1,0 +1,38 @@
+# Docker Compose configuration
+version: "3.8"
+services:
+  db:
+    image: postgres:latest 
+    environment:
+      POSTGRESQL_ROOT_PASSWORD: root_password
+      POSTGRESQL_DATABASE: app_db
+      POSTGRESQL_USER: app_user
+      POSTGRESQL_PASSWORD: app_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/postgresql
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      DB_HOST: db
+      DB_USER: app_user
+      DB_PASSWORD: app_password
+      DB_NAME: app_db
+      DB_PORT: 3306
+    depends_on:
+      - db
+  client:
+    build:
+      context: client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server
+volumes:
+  db_data:
