@@ -40,3 +40,15 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.Pcard {
+  color: white;
+  background-color: black;
+  border-color: red;
+
+}
+
+.Pdiv {
+  border-color: red;
+}
