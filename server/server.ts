@@ -21,7 +21,7 @@ app.use(express.json());
 import dbRouter from './routes/dbRouter.ts'
 app.use('/db', dbRouter);
 
-// Serve all static files in our public folder
+//! Serve all static files in our public folder, omitted because wrong path
 // app.use(express.static('../public/*'));
 
 
