@@ -1,6 +1,6 @@
 // Code for user model functions
 // This file contains functions for creating and finding users in the database
-import pool from './models.ts'; 
+import pool from './models.ts'; // Import the pool connection from models.ts
 
 // Create a new user
 // This function creates a new user in the database
