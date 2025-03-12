@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')!).render(
     <PathCard title="Learning Path" description="Description" progress={0} inProgress={0} notStarted={0} completed={0}/>
               <PathCard title="Learning Path" description="Description" progress={0} inProgress={0} notStarted={0} completed={0}/>
               <PathCard title="Learning Path" description="Description" progress={0} inProgress={0} notStarted={0} completed={0}/>
-             
+              
 
   </StrictMode>,
 )

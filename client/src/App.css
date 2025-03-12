@@ -1,11 +1,11 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1px;
   text-align: center;
 }
 
-.logo {
+/* .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
@@ -16,37 +16,35 @@
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
+} */
 
-@keyframes logo-spin {
+/* @keyframes logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
+} */
 
 .card {
-  padding: 2em;
+  /* padding: 2em; */
 }
 
 .read-the-docs {
   color: #888;
 }
 
-
 .Pcard {
   color: white;
   background-color: black;
   border-color: red;
-
 }
 
 .Pdiv {
@@ -57,11 +55,68 @@
   background-color: black;
   color: white;
   display: flex;
-  
-  
 }
 
-/* .PathCard{
-  background-color: red;
-  
-} */
+.PathCard {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+hr {
+  width: 100%;
+}
+
+.msm {
+  display: flex;
+}
+
+.icon {
+  display: flex;
+  margin-left: 100rem;
+}
+
+.Ptitle {
+  margin-bottom: 1rem;
+}
+
+.title {
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+.tInput {
+  margin-right: 5rem;
+}
+
+.titleW {
+  margin-left: 2rem;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.desc {
+  margin-right: 7rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding: 4rem;
+  border-radius: 10px;
+}
+.descW {
+  margin-right: 200rem;
+  margin-left: 15rem;
+  font-weight: bold;
+  font-size: larger;
+}
+
+.dDiv {
+  margin-left: 7rem;
+}
+
+.cancelbtn {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 20rem;
+  margin-right: 20rem;
+}
