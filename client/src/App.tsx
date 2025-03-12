@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import './App.css'
-import PathCard from './PathCard.tsx'
+// import PathCard from './PathCard.tsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -19,15 +19,17 @@ function App() {
               </button>
               <p className="text-xl text-gray-600 mb-8">Welcome to our awesome app!</p>
             </div>
+            <button className='Pbtn'>New Path +</button>
+          
         
             <div className="flex flex-col items-center">
               
               <>
             
+              {/* <PathCard title="Learning Path" description="Description" progress={0} inProgress={0} notStarted={0} completed={0}/>
               <PathCard title="Learning Path" description="Description" progress={0} inProgress={0} notStarted={0} completed={0}/>
               <PathCard title="Learning Path" description="Description" progress={0} inProgress={0} notStarted={0} completed={0}/>
-              <PathCard title="Learning Path" description="Description" progress={0} inProgress={0} notStarted={0} completed={0}/>
-             
+              */}
 
    </>
    

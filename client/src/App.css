@@ -52,3 +52,16 @@
 .Pdiv {
   border-color: red;
 }
+
+.Pbtn {
+  background-color: black;
+  color: white;
+  display: flex;
+  
+  
+}
+
+/* .PathCard{
+  background-color: red;
+  
+} */

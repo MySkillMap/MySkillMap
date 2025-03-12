@@ -19,7 +19,7 @@
 
 
 import { useState } from "react";
-import { MoreHorizontal, MoreVertical } from "lucide-react";
+import { MoreHorizontal } from "lucide-react";
 
 type PathCardProps = {
   title: string;
@@ -41,7 +41,7 @@ const PathCard: React.FC<PathCardProps> = ({
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <button>
+    <button className="PathCard">
     <div className="bg-gray-300 p-4 rounded-2xl shadow-md w-80 relative">
       {/* Title */}
       <div className="flex justify-between items-center">
