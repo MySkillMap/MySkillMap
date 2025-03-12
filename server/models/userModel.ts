@@ -1,6 +1,7 @@
 // Code for user model functions
 // This file contains functions for creating and finding users in the database
-import pool from './models.ts'; // Import the pool connection from models.ts
+import { Pool } from 'pg'; // Import Pool from pg library
+const pool = new Pool(); // Create a new pool instance
 
 // Create a new user
 // This function creates a new user in the database
