@@ -2,16 +2,19 @@ import express from "express";
 import { Request, Response, NextFunction } from 'express';
 import { ServerError } from './types';
 import cors from 'cors';
+// importing dotenv files
 import dotenv from 'dotenv';
-import path from 'path';
+// importing routers
+import dbRouter from './routes/dbRouter.ts';
+import authRouter from './routes/authRouter.ts';
 
 const app = express();
 
 // Use environment variable for dynamic port setting (Docker can override it)
 const PORT = process.env.PORT || 8080;  // Default to 8080 if not set
 
-// Load environment variables from the .env file
-dotenv.config();
+// This allows us to use our API/URI keys in the .env files
+dotenv.config({path: '../.env'}); 
 
 // Allow CORS (Cross-Origin Resource Sharing)
 app.use(cors());
@@ -19,12 +22,9 @@ app.use(cors());
 // Allows parsing of JSON request bodies
 app.use(express.json());
 
-// Serve static files from the 'public' folder (ensure correct path)
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Importing the database router
-import dbRouter from './routes/dbRouter.ts';
-app.use('/db', dbRouter);
+// Routes
+app.use('/dashboard', dbRouter);
+app.use('/', authRouter);
 
 // Global Error Handler
 app.use(
