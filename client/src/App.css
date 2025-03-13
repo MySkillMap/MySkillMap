@@ -1,122 +1,205 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 1px;
-  text-align: center;
-}
-
-/* .logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-} */
-
-/* @keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* @media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-} */
-
-.card {
-  /* padding: 2em; */
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-.Pcard {
-  color: white;
-  background-color: black;
-  border-color: red;
-}
-
-.Pdiv {
-  border-color: red;
-}
-
-.Pbtn {
-  background-color: black;
-  color: white;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #000a0f;
+ }
+ 
+ 
+ #root {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+ }
+ 
+ 
+ .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+ }
+ 
+ 
+ .form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 350px;
+ }
+ 
+ 
+ .form-toggle {
+  display: flex;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  overflow: hidden;
+ }
+ 
+ 
+ .form-toggle button {
+  width: 50%;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #f5f5f5;
+  color: #333;
+ }
+ 
+ 
+ .form-toggle button:first-child {
+  border-radius: 4px 0 0 4px;
+ }
+ 
+ 
+ .form-toggle button:last-child {
+  border-radius: 0 4px 4px 0;
+ }
+ 
+ 
+ .form-toggle .active {
+  background-color: #000000;
+  color: white;
+ }
+ 
+ 
+ .form {
+  display: flex;
+  flex-direction: column;
+ }
+ 
+ 
+ .form h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+ }
+ 
+ 
+ .form input {
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  color: #333;
+ }
+ 
+ 
+ .form input::placeholder {
+  color: #aaa;
+ }
+ 
+ 
+ .form input:focus {
+  outline: none;
+  border-color: #0C67A0;
+  box-shadow: 0 0 0 2px rgba(12, 103, 160, 0.2);
+ }
+ 
+ 
+ .form button {
+  padding: 12px;
+  margin-top: 5px;
+  background-color: #000203;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+ }
+ 
+ 
+ .form button:hover {
+  background-color: #022a43;
+ }
+ 
+ 
+ .form a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+ }
+ 
+ 
+ 
+ 
+ .signup-prompt {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #666;
+ }
+ 
+ 
+ .signup-prompt a {
+  color: #000307;
+  text-decoration: none;
+  margin-left: 5px;
+ }
+ 
+ 
+ 
+ 
+ .forgot-password {
+  text-align: right;
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #007bff;
+ }
+ 
+ 
+ .form p {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+ }
+
+ .form-input {
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: white;
+  color: #333;
+  width: 90%;
 }
 
-.PathCard {
-  margin-left: 2rem;
-  margin-bottom: 1rem;
+.form-input::placeholder {
+  color: #aaa;
 }
 
-hr {
+.form-input:focus {
+  outline: none;
+  border-color: #0C67A0;
+  box-shadow: 0 0 0 2px rgba(12, 103, 160, 0.2);
+}
+
+.form-input-container {
+  margin-bottom: 15px;
   width: 100%;
 }
 
-.msm {
-  display: flex;
+.input-error {
+  border-color: #dc3545 !important;
 }
 
-.icon {
-  display: flex;
-  margin-left: 100rem;
-}
-
-.Ptitle {
-  margin-bottom: 1rem;
-}
-
-.title {
-  padding: 0.5rem;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-}
-
-.tInput {
-  margin-right: 5rem;
-}
-
-.titleW {
-  margin-left: 2rem;
-  font-weight: bold;
-  font-size: larger;
-}
-
-.desc {
-  margin-right: 7rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  padding: 4rem;
-  border-radius: 10px;
-}
-.descW {
-  margin-right: 200rem;
-  margin-left: 15rem;
-  font-weight: bold;
-  font-size: larger;
-}
-
-.dDiv {
-  margin-left: 7rem;
-}
-
-.cancelbtn {
-  display: flex;
-  justify-content: space-around;
-  margin-left: 20rem;
-  margin-right: 20rem;
+.input-error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
 }
