@@ -1,21 +1,4 @@
-// type PathCardProps = {
-//     title: string;
-//     description: string;
-//   };
 
-//   const PathCard: React.FC<PathCardProps> = ({ title, description }) => {
-//     return (
-//         <button className="Pdiv">
-//       <div>
-//         <h2>{title}</h2>
-//         <p>{description}</p>
-//         <button className="Pcard">View Resources</button>
-//       </div>
-//       </button>
-//     );
-//   };
-
-//   export default PathCard;
 
 import { useState } from "react";
 import { MoreHorizontal } from "lucide-react";
@@ -62,7 +45,7 @@ const PathCard: React.FC<PathCardProps> = ({
           </div>
         </div>
 
-        {/* <p className="text-sm">{description}</p> */}
+        
 
         {/* Progress Bar */}
         <div className="mt-2">

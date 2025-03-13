@@ -1,29 +1,30 @@
 import express from "express";
 import { Request, Response, NextFunction } from 'express';
-import {ServerError} from './types';
+import { ServerError } from './types';
 import cors from 'cors';
+// importing dotenv files
+import dotenv from 'dotenv';
+// importing routers
+import dbRouter from './routes/dbRouter.ts';
+import authRouter from './routes/authRouter.ts';
 
 const app = express();
-const PORT = 8080; //! we can change this later
 
-// importing dotenv files
+// Use environment variable for dynamic port setting (Docker can override it)
+const PORT = process.env.PORT || 8080;  // Default to 8080 if not set
+
 // This allows us to use our API/URI keys in the .env files
-import dotenv from 'dotenv';
 dotenv.config({path: '../.env'}); 
 
-//allow cors to allow all origins
+// Allow CORS (Cross-Origin Resource Sharing)
 app.use(cors());
-// allows parsing of json responses
+
+// Allows parsing of JSON request bodies
 app.use(express.json());
 
-
-// importing a router
-import dbRouter from './routes/dbRouter.ts'
-app.use('/db', dbRouter);
-
-//! Serve all static files in our public folder, omitted because wrong path
-// app.use(express.static('../public/*'));
-
+// Routes
+app.use('/dashboard', dbRouter);
+app.use('/', authRouter);
 
 // Global Error Handler
 app.use(
@@ -39,16 +40,15 @@ app.use(
       status: 500,
       message: { err: 'An error occurred' },
     };
-    // We add the type of ServerError to our errorObj
+    
+    // Combine the default error with the custom error if any
     const errorObj: ServerError = Object.assign({}, defaultErr, err);
     console.log(errorObj.log);
     res.status(errorObj.status).json(errorObj.message);
   }
 );
 
-// App listening event
+// Start the app and listen for requests
 app.listen(PORT, () => {
-    console.log(
-      'Server is Successfully Running, and App is listening on port ' + PORT
-    );
+  console.log(`Server is successfully running on port ${PORT}`);
 });

@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./App.css";
 import Modal from "./Modal";
-// import PathCard from './PathCard.tsx'
+
 
 function App() {
-  // const [count, setCount] = useState(0)
+ 
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 

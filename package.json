@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "bcryptjs": "^3.0.2",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
