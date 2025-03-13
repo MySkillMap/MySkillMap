@@ -2,13 +2,16 @@ import express from "express";
 import { Request, Response, NextFunction } from 'express';
 import {ServerError} from './types';
 import cors from 'cors';
+// importing dotenv files
+import dotenv from 'dotenv';
+// importing routers
+import dbRouter from './routes/dbRouter.ts';
+import authRouter from './routes/authRouter.ts';
 
 const app = express();
 const PORT = 8080; //! we can change this later
 
-// importing dotenv files
 // This allows us to use our API/URI keys in the .env files
-import dotenv from 'dotenv';
 dotenv.config({path: '../.env'}); 
 
 //allow cors to allow all origins
@@ -16,14 +19,9 @@ app.use(cors());
 // allows parsing of json responses
 app.use(express.json());
 
-
-// importing a router
-import dbRouter from './routes/dbRouter.ts'
-app.use('/db', dbRouter);
-
-//! Serve all static files in our public folder, omitted because wrong path
-// app.use(express.static('../public/*'));
-
+// Routes
+app.use('/dashboard', dbRouter);
+app.use('/', authRouter);
 
 // Global Error Handler
 app.use(
