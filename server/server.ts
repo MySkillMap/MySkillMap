@@ -1,17 +1,20 @@
 import express from "express";
-import { Request, Response, NextFunction } from "express";
-import { ServerError } from "./types";
-import cors from "cors";
-import dotenv from "dotenv";
-import path from "path";
+import { Request, Response, NextFunction } from 'express';
+import { ServerError } from './types';
+import cors from 'cors';
+// importing dotenv files
+import dotenv from 'dotenv';
+// importing routers
+import dbRouter from './routes/dbRouter.ts';
+import authRouter from './routes/authRouter.ts';
 
 const app = express();
 
 // Use environment variable for dynamic port setting (Docker can override it)
 const PORT = process.env.PORT || 8080;
 
-// Load environment variables from the .env file
-dotenv.config();
+// This allows us to use our API/URI keys in the .env files
+dotenv.config({path: '../.env'}); 
 
 // Allow CORS (Cross-Origin Resource Sharing)
 app.use(cors());
@@ -19,19 +22,9 @@ app.use(cors());
 // Allows parsing of JSON request bodies
 app.use(express.json());
 
-// Serve static files from the 'public' folder
-app.use(express.static(path.join(__dirname, "public")));
-
-// Import routers
-import dbRouter from "./routes/dbRouter";
-
-// Use database routes under '/api/db'
-app.use("/api/db", dbRouter);
-
-// 404 handler for unknown routes
-app.use((req: Request, res: Response) => {
-  res.status(404).json({ error: "Route not found" });
-});
+// Routes
+app.use('/dashboard', dbRouter);
+app.use('/', authRouter);
 
 // Global error handler
 app.use(
