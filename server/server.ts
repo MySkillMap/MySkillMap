@@ -1,29 +1,30 @@
 import express from "express";
 import { Request, Response, NextFunction } from 'express';
-import {ServerError} from './types';
+import { ServerError } from './types';
 import cors from 'cors';
+import dotenv from 'dotenv';
+import path from 'path';
 
 const app = express();
-const PORT = 8080; //! we can change this later
 
-// importing dotenv files
-// This allows us to use our API/URI keys in the .env files
-import dotenv from 'dotenv';
-dotenv.config({path: '../.env'}); 
+// Use environment variable for dynamic port setting (Docker can override it)
+const PORT = process.env.PORT || 8080;  // Default to 8080 if not set
 
-//allow cors to allow all origins
+// Load environment variables from the .env file
+dotenv.config();
+
+// Allow CORS (Cross-Origin Resource Sharing)
 app.use(cors());
-// allows parsing of json responses
+
+// Allows parsing of JSON request bodies
 app.use(express.json());
 
+// Serve static files from the 'public' folder (ensure correct path)
+app.use(express.static(path.join(__dirname, 'public')));
 
-// importing a router
-import dbRouter from './routes/dbRouter.ts'
+// Importing the database router
+import dbRouter from './routes/dbRouter.ts';
 app.use('/db', dbRouter);
-
-//! Serve all static files in our public folder, omitted because wrong path
-// app.use(express.static('../public/*'));
-
 
 // Global Error Handler
 app.use(
@@ -39,16 +40,15 @@ app.use(
       status: 500,
       message: { err: 'An error occurred' },
     };
-    // We add the type of ServerError to our errorObj
+    
+    // Combine the default error with the custom error if any
     const errorObj: ServerError = Object.assign({}, defaultErr, err);
     console.log(errorObj.log);
     res.status(errorObj.status).json(errorObj.message);
   }
 );
 
-// App listening event
+// Start the app and listen for requests
 app.listen(PORT, () => {
-    console.log(
-      'Server is Successfully Running, and App is listening on port ' + PORT
-    );
+  console.log(`Server is successfully running on port ${PORT}`);
 });

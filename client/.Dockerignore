@@ -1,0 +1,17 @@
+# Ignore node_modules, build files, and other irrelevant files
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Ignore .git files
+.git/
+
+# Ignore Dockerfile itself (optional, not required)
+Dockerfile
+
+# Ignore logs
+*.log
+
+# Ignore local build files (e.g., dist, build)
+client/dist/
+client/build/
