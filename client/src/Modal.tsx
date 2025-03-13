@@ -10,7 +10,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
 
   return (
     <div className="PathCard">
-      <div className="card">
+      <div className="NPcard">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -37,6 +37,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose }) => {
           <label className="descW">Description</label>
           <textarea
             placeholder="Describe the purpose of this learning path"
+            wrap="physical"
             className="desc"
             rows={3}
           ></textarea>

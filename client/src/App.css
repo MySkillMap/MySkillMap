@@ -34,7 +34,15 @@
 } */
 
 .card {
-  /* padding: 2em; */
+  /* background-color: red; */
+}
+
+.NPcard {
+  border-radius: 10px;
+  background-color: #88888856;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-bottom: 1rem;
 }
 
 .read-the-docs {
@@ -91,32 +99,34 @@ hr {
 }
 
 .titleW {
-  margin-left: 2rem;
   font-weight: bold;
   font-size: larger;
 }
 
 .desc {
-  margin-right: 7rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  padding: 4rem;
   border-radius: 10px;
+  border-style: solid;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 250px;
+  width: 300px;
 }
 .descW {
-  margin-right: 200rem;
-  margin-left: 15rem;
+  float: left;
+  width: 10em;
   font-weight: bold;
   font-size: larger;
 }
 
 .dDiv {
-  margin-left: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cancelbtn {
-  display: flex;
-  justify-content: space-around;
-  margin-left: 20rem;
-  margin-right: 20rem;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
