@@ -10,6 +10,10 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+const PG_URI = process.env.DB_PASSWORD;
+  // create instance of pool
+  // general idea //not sure of actual data of properties to pass to pool
+
 const pool = new Pool({ // create instance of pool 
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
@@ -21,5 +25,3 @@ const pool = new Pool({ // create instance of pool
 module.exports = {
   query: (text, params) => pool.query(text, params)
 };
-
-
