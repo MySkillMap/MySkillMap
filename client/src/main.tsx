@@ -1,17 +1,18 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import AuthPage from './AuthPage';
+import ViewResources from './ViewResources';
 
-//import App from './App.tsx'
-//import PathCard from './PathCard.tsx'
+
+//import AuthPage from './AuthPage';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-      <AuthPage />
-   
-    <br></br>
+    
+    <ViewResources />
+      {/* <AuthPage /> */}
    
 
+   
   </StrictMode>,
 )

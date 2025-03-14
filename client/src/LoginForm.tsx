@@ -20,7 +20,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onLogin, onSwitchToSignup }) => {
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <h2>Login</h2>
+      <h2>Welcome Back to MySkillMap!</h2>
       <FormInput
         type='email'
         placeholder='Email Address'
