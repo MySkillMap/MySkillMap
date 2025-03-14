@@ -1,17 +1,48 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-color: #000a0f;
- }
- 
- 
- #root {
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1px;
+  text-align: center;
+}
+
+
+
+.NPcard {
+  border-radius: 10px;
+  background-color: #88888856;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  margin-bottom: 1rem;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.Pcard {
+  color: white;
+  background-color: black;
+}
+
+.Pdiv {
+  border-color: red;
+}
+
+.Pbtn {
+  background-color: black;
+  color: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
+
+.PathCard {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  padding: 1px;
+  padding-bottom: 5%;
+}
+
+hr {
   width: 100%;
  }
  
@@ -198,8 +229,10 @@ body {
   border-color: #dc3545 !important;
 }
 
-.input-error-message {
-  color: #dc3545;
-  font-size: 14px;
-  margin-top: 5px;
+
+.vbtn {
+background-color: black;
+color: white;
+
+
 }
