@@ -1,0 +1,147 @@
+/* 
+Color palette inspired by provided CSS
+cream -- #FDF8F1
+yellow -- #FFE486
+blue -- #C4DDF6
+light pink -- #FEEFE8
+pink -- #FACDCC
+black
+*/
+
+/* Main container */
+.resources-page {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #FDF8F1;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* Header styles */
+  .resources-header {
+    padding: 16px;
+    border-bottom: 1px solid #FACDCC;
+    background-color: white;
+  }
+  
+  .path-title {
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    color:#555;
+  }
+  
+  .path-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  
+  /* Blue divider line */
+  .divider-line {
+    height: 4px;
+    width: 100%;
+    background-color: #C4DDF6;
+  }
+  
+  /* Content area */
+  .resources-content {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+  }
+  
+  /* Add resource button */
+  .add-resource-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .add-resource-btn {
+    border-radius: 30px;
+    border: 1px black solid;
+    background-color: #FFE486;
+    color: black;
+    font-weight: 500;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .add-resource-btn:hover {
+    background-color: #efc325;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Resources table */
+  .resources-table-container {
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .resources-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+  }
+  
+  .resources-table th {
+    background-color: #C4DDF6;
+    padding: 12px 16px;
+    text-align: left;
+    font-family: "Space Mono", monospace;
+    font-weight: 700;
+    color: black;
+  }
+  
+  .resources-table td {
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .resources-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Status styling */
+  .status-completed {
+    color: #4CAF50;
+    font-weight: 500;
+  }
+  
+  .status-in-progress {
+    color: #FF9800;
+    font-weight: 500;
+  }
+  
+  .status-not-started {
+    color: #9E9E9E;
+    font-weight: 500;
+  }
+  
+  /* Action buttons */
+  .action-button {
+    background: none;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  
+  .action-button:hover {
+    color: #C4DDF6;
+    text-decoration: underline;
+  }
+  
+  .action-button.delete:hover {
+    color: red;
+  }
