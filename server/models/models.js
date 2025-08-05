@@ -5,19 +5,16 @@
 // the tables. This will be used in the server.ts file
 // to interact with the database.
 
-const {Pool} = require('pg'); // imports Pool glass from node postgres library
+const { Pool } = require('pg'); // imports Pool class from node postgres library
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-
-
 const PG_URI = process.env.DB_PASSWORD;
+  // create instance of pool
+  // general idea //not sure of actual data of properties to pass to pool
 
-const pool = new Pool ({ // create instance of pool 
-    // general idea //not sure of actual data of properties to pass to pool
-
-
+const pool = new Pool({ // create instance of pool 
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     host: process.env.DB_HOST,
@@ -25,7 +22,6 @@ const pool = new Pool ({ // create instance of pool
     database: process.env.DB_NAME
 });
 
-module.exports {
-query: (text, params) =>  pool.query(text,params)
-}
-
+module.exports = {
+  query: (text, params) => pool.query(text, params)
+};

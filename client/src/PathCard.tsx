@@ -1,7 +1,7 @@
-
-
+import React from "react";
 import { useState } from "react";
 import { MoreHorizontal } from "lucide-react";
+import Modal1 from "./EdittModal";
 
 type PathCardProps = {
   title: string;
@@ -21,6 +21,7 @@ const PathCard: React.FC<PathCardProps> = ({
   notStarted,
 }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <button className="PathCard">
@@ -36,7 +37,18 @@ const PathCard: React.FC<PathCardProps> = ({
             </button>
             {menuOpen && (
               <div className="absolute right-0 mt-2 w-20 bg-white shadow-md border rounded-md">
-                <button className="block w-full px-2 py-1 text-sm">Edit</button>
+                <button
+                  onClick={() => setIsModalOpen(true)}
+                  className="block w-full px-2 py-1 text-sm"
+                >
+                  Edit
+                </button>
+
+                <Modal1
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                />
+
                 <button className="block w-full px-2 py-1 text-sm text-red-500">
                   Delete
                 </button>
@@ -44,8 +56,6 @@ const PathCard: React.FC<PathCardProps> = ({
             )}
           </div>
         </div>
-
-        
 
         {/* Progress Bar */}
         <div className="mt-2">
@@ -67,7 +77,7 @@ const PathCard: React.FC<PathCardProps> = ({
         </div>
 
         {/* View Resources Button */}
-        <button className="mt-3 w-full bg-black text-white p-2 rounded">
+        <button className="vbtn">
           View Resources
         </button>
       </div>

@@ -11,7 +11,7 @@ import authRouter from './routes/authRouter.ts';
 const app = express();
 
 // Use environment variable for dynamic port setting (Docker can override it)
-const PORT = process.env.PORT || 8080;  // Default to 8080 if not set
+const PORT = process.env.PORT || 8080;
 
 // This allows us to use our API/URI keys in the .env files
 dotenv.config({path: '../.env'}); 
@@ -26,29 +26,27 @@ app.use(express.json());
 app.use('/dashboard', dbRouter);
 app.use('/', authRouter);
 
-// Global Error Handler
+// Global error handler
 app.use(
-  '/',
   (
     err: ServerError,
     req: Request,
     res: Response,
     _next: NextFunction
   ): void => {
-    const defaultErr = {
-      log: 'Express error handler caught unknown middleware error',
+    const defaultErr: ServerError = {
+      log: "Express error handler caught unknown middleware error",
       status: 500,
-      message: { err: 'An error occurred' },
+      message: { err: "An internal server error occurred" },
     };
     
-    // Combine the default error with the custom error if any
-    const errorObj: ServerError = Object.assign({}, defaultErr, err);
-    console.log(errorObj.log);
+    const errorObj = { ...defaultErr, ...err };
+    console.error(errorObj.log);
     res.status(errorObj.status).json(errorObj.message);
   }
 );
 
 // Start the app and listen for requests
 app.listen(PORT, () => {
-  console.log(`Server is successfully running on port ${PORT}`);
+  console.log(`🚀 Server is running on http://localhost:${PORT}`);
 });

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 import "./App.css";
 import Modal from "./Modal";
 
@@ -22,7 +23,7 @@ function App() {
               {/* <p>Learning Paths</p> */}
             </div>
             {/* <button className="Pbtn">New Path +</button> */}
-            <b>Learning Paths</b>
+            <h2>Learning Paths</h2>
 
             <div>
               <div className="flex flex-col items-center justify-center min-h-screen">

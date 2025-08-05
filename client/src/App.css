@@ -18,9 +18,16 @@ body {
 
 #root {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+}
+
+.PathCard {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  padding: 1px;
+  padding-bottom: 5%;
+}
+
+hr {
   width: 100%;
 }
 
